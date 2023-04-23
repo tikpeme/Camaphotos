@@ -1,0 +1,86 @@
+/*.navbar {
+  border: 2px solid red;
+  padding: 1rem 6rem;
+  background-color: #f7f7f7;
+}
+
+#navbarNavAltMarkup {
+  a {
+    border: 1px solid blue;
+  }
+  text-align: center;
+  font-size: larger;
+}
+
+@media screen and (max-width: 500px) {
+  #navbarNavAltMarkup > a {
+    border: 1px solid blue;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  #navbarNavAltMarkup {
+    border: 1px solid red;
+    justify-content: right;
+
+    .navbar-nav {
+      gap: 3rem;
+    }
+
+    a {
+      border: 1px solid red;
+    }
+  }
+}
+*/
+
+.header-display-desktop {
+  display: flex;
+  background-color: black;
+  //width: 100%;
+  border: red 1px solid;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 2rem 6rem;
+}
+
+.header-title-nav-wrapper {
+  //border: blue 1px solid;
+  display: flex;
+  flex: 1 0 85%;
+  justify-content: space-between;
+}
+.navbar-brand {
+  //border: red 1px solid;
+  width: 70px;
+  display: flex;
+  object-fit: contain;
+}
+.header-icons-wrapper {
+  //border: blue 1px solid;
+  display: flex;
+}
+.header-nav {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  //border: rebeccapurple solid 1px;
+}
+
+.header-nav-item {
+  //border: red solid 1px;
+  margin: 0 1.5rem;
+  color: azure;
+}
+
+.header-icon {
+  //border: red solid 1px;
+  margin-left: 1rem;
+  color: white;
+}
+
+@media screen and (max-width: 706px) {
+  .header-display-desktop {
+    width: fit-content;
+  }
+}
