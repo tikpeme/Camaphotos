@@ -67,20 +67,82 @@
   //border: rebeccapurple solid 1px;
 }
 
-.header-nav-item {
+.desktop-header-nav-item {
   //border: red solid 1px;
   margin: 0 1.5rem;
   color: azure;
+  font-family: "Josefin Sans";
 }
 
-.header-icon {
+.header-icons {
   //border: red solid 1px;
   margin-left: 1rem;
   color: white;
 }
 
+.RxHamburgerMenu {
+  display: none;
+}
+.MobileFullScreenMenu {
+  display: none;
+}
+
 @media screen and (max-width: 706px) {
+  .desktop-header-nav-links {
+    display: none;
+  }
+  .header-icons-wrapper {
+    display: none;
+  }
+  .react-icons {
+    size: 20;
+    color: red;
+  }
+  .RxHamburgerMenu {
+    display: block;
+  }
   .header-display-desktop {
-    width: fit-content;
+    padding: 2.5rem 2rem;
+  }
+  .MobileFullScreenMenu {
+    display: block;
+
+    .MobileFullScreenMenuOverlay {
+      position: fixed; /* Sit on top of the page content */
+      width: 100%; /* Full width (cover the whole page) */
+      height: 100%; /* Full height (cover the whole page) */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      //background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+      background-color: white;
+      border: 1 red solid;
+      z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+      cursor: pointer; /* Add a pointer on hover */
+    }
+    .Mobile-header-nav-links {
+      display: flex;
+      flex-direction: column;
+      margin-left: 1rem;
+      color: black;
+      justify-content: center;
+      align-items: center;
+
+      .MobileFullScreen-header-nav-item {
+        margin: 3rem;
+        color: black;
+        font-family: "Josefin Sans";
+        font-size: xx-large;
+      }
+      .RxCross1 {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border: solid black 1px;
+        padding: 10px;
+        border-radius: 50%;
+      }
+    }
   }
 }
