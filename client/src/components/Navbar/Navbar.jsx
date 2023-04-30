@@ -11,7 +11,7 @@ import {
   toggleBtn,
 } from "./fullscreenToggle.js";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Navigation() {
   //state for fullscreen menu
@@ -81,10 +81,16 @@ function Navigation() {
     window.addEventListener("resize", resizeHandler, false);
   }, []);
 */
-
+  const mobileNavlinks = [
+    { id: 1, label: "Home", href: "/" },
+    { id: 2, label: "About", href: "/about" },
+    { id: 3, label: "Camaphotos", href: "/camaphotos" },
+    { id: 4, label: "ContactMe", href: "/contact" },
+  ];
   const toggleCalculateValues = () => {
     calculateValues();
     toggleMenu();
+    setFullScreenMenu(!fullScreenMenu);
   };
 
   //toggleBtn.onclick = toggleMenu;
@@ -113,26 +119,35 @@ function Navigation() {
               <span></span>
               <span></span>
             </div>
-
-            {fullScreenMenu && (
-              <div className="MobileFullScreenMenu">
-                {" "}
-                <nav className="Mobile-header-nav-links">
-                  <a href="#" className="MobileFullScreen-header-nav-item">
-                    Home
-                  </a>
-                  <a href="#" className="MobileFullScreen-header-nav-item">
-                    Portfolio
-                  </a>
-                  <a href="#" className="MobileFullScreen-header-nav-item">
-                    CamaModels
-                  </a>
-                  <a href="#" className="MobileFullScreen-header-nav-item">
-                    ContactMe
-                  </a>
-                </nav>
-              </div>
-            )}
+            <AnimatePresence>
+              {fullScreenMenu && (
+                <div className="MobileFullScreenMenu">
+                  {" "}
+                  {mobileNavlinks.map((link) => (
+                    <motion.div
+                      className="Mobile-header-nav-links"
+                      key={link.id}
+                      initial={{ opacity: 0, y: 500 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      //exit={{ opacity: 0, duration: 3 }}
+                      layout
+                      transition={{
+                        delay: link.id * 0.2,
+                        ease: "easeOut",
+                        duration: 0.6, // add delay based on item id
+                      }}
+                    >
+                      <a
+                        href={link.href}
+                        className="MobileFullScreen-header-nav-item"
+                      >
+                        {link.label}
+                      </a>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>

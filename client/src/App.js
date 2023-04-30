@@ -16,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar></Navbar>
+
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/Portfolio" element={<Portfolio></Portfolio>}></Route>

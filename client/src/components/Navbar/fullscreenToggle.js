@@ -20,7 +20,7 @@ export const calculateValues = () => {
 
   // Good old pythagoras
   const radius = Math.sqrt(h ** 2 + w ** 2);
-  scale = radius / (elemW / 2) / 2 + 0.1; // Add '.1' to compensate for Safari sub pixel blur issue
+  scale = radius / (elemW / 2) / 2 + 0.9; // Add '.1' to compensate for Safari sub pixel blur issue
   return scale;
 };
 

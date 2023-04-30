@@ -45,7 +45,7 @@
   display: flex;
   background-color: black;
   //width: 100%;
-  border: red 1px solid;
+  //border: red 1px solid;
   box-sizing: border-box;
   align-items: center;
   padding: 2rem 6rem;
@@ -117,11 +117,20 @@
   }
   .MobileFullScreenMenu {
     display: block;
-
+    font-family: "Encode Sans Condensed", sans-serif;
+    font-weight: 600;
+    width: auto;
+    position: fixed;
+    //border: red solid 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //background: linear-gradient(to top right, #4eca78, #d0db68);
+    z-index: 1001;
     .Mobile-header-nav-links {
       display: flex;
       flex-direction: column;
-      margin-left: 1rem;
+      //margin-left: 1rem;
       color: black;
       justify-content: center;
       align-items: center;
