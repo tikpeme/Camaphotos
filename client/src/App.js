@@ -11,11 +11,17 @@ import Navbar from "./components/Navbar/Navbar";
 import Portfolio from "./components/Portfolio/Portfolio";
 import ContactMe from "./components/ContactMe/ContactMe";
 import CamaModels from "./components/CamaModels/CamaModels";
+import Banner from "./components/Banner/Banner";
+
+import AboutMe from "./components/AboutMe/AboutMe";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar></Navbar>
+      <Banner></Banner>
+      <AboutMe></AboutMe>
+      <AboutMe></AboutMe>
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>

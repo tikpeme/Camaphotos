@@ -42,13 +42,17 @@
 }
 
 .header-display-desktop {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
   display: flex;
-  background-color: black;
+  background-color: transparent;
   //width: 100%;
   //border: red 1px solid;
   box-sizing: border-box;
   align-items: center;
-  padding: 2rem 6rem;
+  padding: 1.5rem 6rem;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .header-title-nav-wrapper {
@@ -60,8 +64,11 @@
 .navbar-brand {
   //border: red 1px solid;
   width: 70px;
+  height: auto;
+  border-radius: 50%;
   display: flex;
   object-fit: contain;
+  overflow: hidden;
 }
 .header-icons-wrapper {
   //border: blue 1px solid;
