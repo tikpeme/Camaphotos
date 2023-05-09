@@ -21,7 +21,6 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
       <AboutMe></AboutMe>
-      <AboutMe></AboutMe>
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>

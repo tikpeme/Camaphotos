@@ -42,17 +42,20 @@
 }
 
 .header-display-desktop {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   background-color: transparent;
   //width: 100%;
   //border: red 1px solid;
   box-sizing: border-box;
   align-items: center;
-  padding: 1.5rem 6rem;
-  transition: background-color 0.5s ease-in-out;
+  padding: 1.3rem 6rem;
+  transition: background-color 0.7s ease-in-out;
+  //transition: opacity 4s ease-in-out;
+  z-index: 2;
 }
 
 .header-title-nav-wrapper {

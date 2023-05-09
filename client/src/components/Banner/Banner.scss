@@ -1,18 +1,24 @@
 .backGroundWrapper {
   width: 100%; /* set the width of the container to match the parent element */
-  height: 0; /* set the initial height to 0 */
+  height: 100vh;
+  /* set the initial height to 0 */
   //padding-bottom: 100%; /* set the aspect ratio of the image (e.g. 75% = 4:3) */
   position: relative;
-  //z-index: -1;
-  margin-bottom: 45em;
+  top: 0;
+
+  z-index: 1;
+  //margin-bottom: 55em;
+  overflow: hidden;
+
+  border: red solid 1px;
   .backGroundImage {
-    position: fixed; /* position the image absolutely within the container */
+    position: absolute;
     top: 0; /* position the top of the image at the top of the container */
     left: 0; /* position the left of the image at the left of the container */
     width: 100%; /* set the width of the image to match the container */
     height: 100%; /* set the height of the image to match the container */
     object-fit: cover;
     opacity: 0.8;
-    z-index: -1;
+    transition: transform 0.5s ease-in-out;
   }
 }

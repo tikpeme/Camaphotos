@@ -25,7 +25,7 @@ function Navigation() {
     toggleMenu();
     setFullScreenMenu(!fullScreenMenu);
   };
-  //listeners for
+  //listeners for resize animation
   window.addEventListener("resize", resizeHandler, false);
 
   //Array for mobile screen animations
@@ -38,11 +38,13 @@ function Navigation() {
 
   window.addEventListener("scroll", function () {
     let desktopNavbar = document.querySelector(".header-display-desktop");
-    if (window.pageYOffset > 10) {
+    if (window.pageYOffset > 600) {
       ////scroll distance to engage background
+      desktopNavbar.style.opacity = "0.7";
       desktopNavbar.style.backgroundColor = "black";
     } else {
       desktopNavbar.style.backgroundColor = "transparent";
+      desktopNavbar.style.opacity = "0.7";
     }
   });
 
@@ -82,9 +84,9 @@ function Navigation() {
                       //exit={{ opacity: 0, duration: 3 }}
                       layout
                       transition={{
-                        delay: link.id * 0.2,
+                        delay: link.id * 0.2, // add delay based on item id
                         ease: "easeOut",
-                        duration: 0.6, // add delay based on item id
+                        duration: 0.6,
                       }}
                     >
                       <a
