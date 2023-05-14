@@ -24,6 +24,7 @@ function Navigation() {
     calculateValues();
     toggleMenu();
     setFullScreenMenu(!fullScreenMenu);
+    document.querySelector(".header-display-desktop").style.opacity = "1";
   };
   //listeners for resize animation
   window.addEventListener("resize", resizeHandler, false);
@@ -38,13 +39,23 @@ function Navigation() {
 
   window.addEventListener("scroll", function () {
     let desktopNavbar = document.querySelector(".header-display-desktop");
-    if (window.pageYOffset > 600) {
+    if (window.pageYOffset > 600 && !fullScreenMenu) {
       ////scroll distance to engage background
-      desktopNavbar.style.opacity = "0.7";
+      console.log(fullScreenMenu);
+      console.log(desktopNavbar.style.opacity);
+
       desktopNavbar.style.backgroundColor = "black";
-    } else {
-      desktopNavbar.style.backgroundColor = "transparent";
       desktopNavbar.style.opacity = "0.7";
+    } else if (window.pageYOffset > 250) {
+      if (fullScreenMenu) {
+        desktopNavbar.style.opacity = "1";
+      } else {
+        desktopNavbar.style.backgroundColor = "transparent";
+        desktopNavbar.style.opacity = "0.7";
+      }
+    } else if (!fullScreenMenu) {
+      // desktopNavbar.style.backgroundColor = "transparent";
+      desktopNavbar.style.opacity = "1";
     }
   });
 

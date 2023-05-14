@@ -54,7 +54,7 @@
   align-items: center;
   padding: 1.3rem 6rem;
   transition: background-color 0.7s ease-in-out;
-  //transition: opacity 4s ease-in-out;
+  //transition: opacity 4s;
   z-index: 2;
 }
 
@@ -227,8 +227,8 @@ BUTTON
     content: "";
     position: absolute;
     top: 0;
-    background: currentColor;
-    opacity: 0.8;
+    background: black;
+    opacity: 1;
     height: 100%;
     width: 50%;
     height: 4px;

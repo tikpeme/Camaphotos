@@ -14,7 +14,7 @@ function Banner() {
     let zoomAmount = window.pageYOffset * zoomScale + 1;
     zoomAmount = Math.min(zoomAmount, maxValue);
 
-    console.log(`scale amount is ${zoomAmount}`);
+    // console.log(`scale amount is ${zoomAmount}`);
     //  console.log(`Window offset is ${window.pageYOffset}`);
 
     //backGroundImage.style.transform = `scale(${zoomAmount})`;
