@@ -14,6 +14,7 @@ import CamaModels from "./components/CamaModels/CamaModels";
 import Banner from "./components/Banner/Banner";
 
 import AboutMe from "./components/AboutMe/AboutMe";
+import Gallery from "./components/Gallery/Gallery";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
       <AboutMe></AboutMe>
+      <Gallery></Gallery>
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
