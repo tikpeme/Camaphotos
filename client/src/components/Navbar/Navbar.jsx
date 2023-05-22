@@ -17,7 +17,7 @@ function Navigation() {
   //States////////////////////////////////
   const [fullScreenMenu, setFullScreenMenu] = useState(false); //state for fullscreen menu
 
-  const [desktopScrolled, setDesktopScrolled] = useState(false); //state for scrolling to modify desktop navbar opacity
+  //const [desktopScrolled, setDesktopScrolled] = useState(false); //state for scrolling to modify desktop navbar opacity
 
   //Function to toggle fullscreen overlay in mobile view
   const toggleCalculateValues = () => {
@@ -41,11 +41,10 @@ function Navigation() {
     let desktopNavbar = document.querySelector(".header-display-desktop");
     if (window.pageYOffset > 600 && !fullScreenMenu) {
       ////scroll distance to engage background
-      //console.log(fullScreenMenu);
+      console.log(window.pageYOffset);
       //console.log(desktopNavbar.style.opacity);
-
       desktopNavbar.style.backgroundColor = "black";
-      desktopNavbar.style.opacity = "0.7";
+      desktopNavbar.style.opacity = "1";
     } else if (window.pageYOffset > 250) {
       if (fullScreenMenu) {
         desktopNavbar.style.opacity = "1";
@@ -71,7 +70,6 @@ function Navigation() {
         <div className="header-nav">
           <div className="header-nav-wrapper">
             <NavLinks></NavLinks>
-
             <div id="nav-bg" className="btn"></div>
             <div
               id="toggle-btn"

@@ -53,9 +53,19 @@
   box-sizing: border-box;
   align-items: center;
   padding: 1.3rem 6rem;
-  transition: background-color 0.7s ease-in-out;
+  transition: background-color 1.3s ease-out;
   //transition: opacity 4s;
   z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    filter: blur(1px);
+    z-index: 2;
+  }
 }
 
 .header-title-nav-wrapper {
@@ -205,7 +215,7 @@ BUTTON
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(black);
+    color: black;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
   }

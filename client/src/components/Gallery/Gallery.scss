@@ -1,5 +1,5 @@
 //For desktop browsers
-.section-gallery {
+/*.section-gallery {
   padding-bottom: 80px;
   padding-top: 120px;
 
@@ -133,58 +133,82 @@
       }
     }
   }
-}
+}*/
 
-.image-grid-container {
-  //position: relative;
-  width: auto;
-  border: rgb(0, 255, 140) solid 4px;
+.section-gallery {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  .image-grid {
-    column-count: 3;
-    max-width: 1200px;
+  //max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  .section-name {
+    text-decoration: none;
+    //    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+    margin-top: 0px;
+    margin-bottom: 32px;
+    font-size: 54px;
+    line-height: 60px;
+  }
+  .image-grid-container {
+    //position: relative;
+    width: auto;
+    //border: rgb(0, 255, 140) solid 4px;
+    display: flex;
     justify-content: center;
+    .image-grid {
+      column-count: 3;
+      max-width: 1200px;
+      justify-content: center;
 
-    .image-container {
-      position: relative;
-      max-width: 350px;
-      overflow: hidden;
+      .image-container {
+        position: relative;
+        max-width: 350px;
+        overflow: hidden;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        cursor: pointer;
 
-      .image-overlay-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        transition: all 0.7s ease; // Specify the transition properties
-        opacity: 0;
+        .image-overlay-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 1.8px;
+          text-transform: uppercase;
+          transition: all 0.7s ease; // Specify the transition properties
+          opacity: 0;
 
-        &.show {
-          opacity: 1;
-          height: auto;
-          z-index: 2;
+          &.show {
+            opacity: 1;
+            height: auto;
+            //z-index: 1;
+          }
         }
-      }
 
-      img {
-        max-width: 100%;
-        height: auto;
-        transform: scale(1);
-        transition: all 0.7s ease;
+        img {
+          max-width: 100%;
+          height: auto;
+          transform: scale(1);
+          transition: all 0.7s ease;
 
-        &:hover {
-          transform: scale(1.2); // Apply the scale transformation on hover
-          opacity: 0.4;
+          &:hover {
+            transform: scale(1.2); // Apply the scale transformation on hover
+            opacity: 0.4;
+          }
         }
       }
     }
   }
 }
+
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);

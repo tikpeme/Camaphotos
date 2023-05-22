@@ -25,29 +25,32 @@ function Gallery() {
   };
   console.log(makeGallery(imagesArr));
   return (
-    <div className="image-grid-container">
-      <div className="image-grid">
-        {makeGallery(imagesArr).map((image) => (
-          <div
-            className={image.className} //"image-container"
-            onMouseEnter={() => handleMouseEnter(image.id)}
-            onMouseLeave={handleMouseLeave}
-            key={image.id}
-          >
-            <p
-              className={`image-overlay-text ${
-                HoveredElementiD === image.id ? "show" : ""
-              }`}
+    <section className="section-gallery">
+      <div className="section-name">Gallery</div>
+      <div className="image-grid-container">
+        <div className="image-grid">
+          {makeGallery(imagesArr).map((image) => (
+            <div
+              className={image.className} //"image-container"
+              onMouseEnter={() => handleMouseEnter(image.id)}
+              onMouseLeave={handleMouseLeave}
+              key={image.id}
             >
-              {" "}
-              View IMAGE{" "}
-            </p>
+              <p
+                className={`image-overlay-text ${
+                  HoveredElementiD === image.id ? "show" : ""
+                }`}
+              >
+                {" "}
+                View IMAGE{" "}
+              </p>
 
-            <img src={image.imageUrl} />
-          </div>
-        ))}
+              <img src={image.imageUrl} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

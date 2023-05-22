@@ -45,43 +45,46 @@ function AboutMe() {
   };
 
   return (
-    <div className="aboutMeWrapper">
-      <motion.div
-        ref={ref}
-        className="aboutMeImageWrapper"
-        animate={controls}
-        initial="hidden"
-        variants={imgVariants}
-        transition={{ duration: 2 }}
-      >
-        <img src={portrait} />
-      </motion.div>
+    <section className="section-about-me">
+      <div className="aboutMeWrapper">
+        <motion.div
+          ref={ref}
+          className="aboutMeImageWrapper"
+          animate={controls}
+          initial="hidden"
+          variants={imgVariants}
+          transition={{ duration: 2 }}
+        >
+          <img src={portrait} />
+        </motion.div>
 
-      <motion.div
-        className="aboutMeDescriptionWrapper"
-        animate={controls}
-        initial="hidden"
-        variants={textVariants}
-        ref={ref}
-      >
-        <h2 className="aboutMeTitle">
-          Hi, I'm Amadou. Lifestyle photographer based in Miami{" "}
-        </h2>
-        <p className="aboutMeDescription">
-          {" "}
-          As a freelance photographer my art is all about capturing the essence
-          of wellness, natural aesthetics, and human connection. I specialize in
-          using natural light and soft tones to create stunning images that
-          truly reflect the beauty of my subjects. Whether I'm shooting art in
-          nature or the relationships between people, my goal is always to
-          capture those special moments that make life worth living. With a
-          passion for wellness and an eye for detail, I pride myself on
-          delivering stunning images that not only look beautiful but also tell
-          a story. If you're looking for a photographer who can capture the
-          beauty in people and nature alike, then look no further than me.
-        </p>
-      </motion.div>
-    </div>
+        <motion.div
+          className="aboutMeDescriptionWrapper"
+          animate={controls}
+          initial="hidden"
+          variants={textVariants}
+          ref={ref}
+        >
+          <h2 className="aboutMeTitle">
+            Hi, I'm Amadou. Lifestyle photographer based in Miami{" "}
+          </h2>
+          <p className="aboutMeDescription">
+            {" "}
+            As a freelance photographer my art is all about capturing the
+            essence of wellness, natural aesthetics, and human connection. I
+            specialize in using natural light and soft tones to create stunning
+            images that truly reflect the beauty of my subjects. Whether I'm
+            shooting art in nature or the relationships between people, my goal
+            is always to capture those special moments that make life worth
+            living. With a passion for wellness and an eye for detail, I pride
+            myself on delivering stunning images that not only look beautiful
+            but also tell a story. If you're looking for a photographer who can
+            capture the beauty in people and nature alike, then look no further
+            than me.
+          </p>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
