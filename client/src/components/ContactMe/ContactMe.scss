@@ -1,0 +1,117 @@
+.contactMe-section {
+  min-height: 55vh;
+  margin-top: 70px;
+  border: green solid 1px;
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 80px;
+
+  .contactMe-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 32px;
+    padding-left: 32px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1280px;
+    -ms-flex: 0 1280px;
+    flex: 0 1280px;
+    .contact-grid {
+      position: relative;
+      z-index: 1;
+      display: -ms-grid;
+      display: grid;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      grid-auto-columns: 1fr;
+      /* grid-column-gap: 16px; */
+      grid-row-gap: 16px;
+      -ms-grid-columns: 1fr 0.25fr 1fr;
+      grid-template-columns: 1fr 0.25fr 1fr;
+      -ms-grid-rows: auto;
+      grid-template-rows: auto;
+
+      .contact-title {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #fff;
+        font-size: 42px;
+        line-height: 48px;
+      }
+      .form-wrapper {
+        -ms-grid-column: 3;
+        grid-column-start: 3;
+        -ms-grid-column-span: 1;
+        grid-column-end: 4;
+        -ms-grid-row: 1;
+        grid-row-start: 1;
+        -ms-grid-row-span: 1;
+        grid-row-end: 2;
+
+        .text-field-wrapper {
+          display: flex;
+
+          .text-wrap {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            .field-label {
+              margin-bottom: 10px;
+              font-family: "Times New Roman", TimesNewRoman, Times, Baskerville,
+                Georgia, serif;
+              color: #fff;
+              font-size: 16px;
+              line-height: 22px;
+            }
+            .text-field {
+              height: 48px;
+              margin-bottom: 24px;
+              padding-bottom: 12px;
+              border-style: solid;
+              border-width: 1px;
+              border-color: hsla(0, 0%, 100%, 0.5);
+              border-radius: 0px;
+              background-color: transparent;
+              -webkit-transition: border-color 200ms ease;
+              transition: border-color 200ms ease;
+              color: #fff;
+            }
+          }
+          .text-field-spacer {
+            width: 32px;
+          }
+        }
+        .field-label {
+          margin-bottom: 10px;
+          font-family: "Times New Roman", TimesNewRoman, Times, Baskerville,
+            Georgia, serif;
+          color: #fff;
+          font-size: 16px;
+          line-height: 22px;
+        }
+        .text-field.min-height {
+          height: 48px;
+          margin-bottom: 24px;
+          padding-bottom: 12px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: hsla(0, 0%, 100%, 0.5);
+          border-radius: 0px;
+          background-color: transparent;
+          -webkit-transition: border-color 200ms ease;
+          transition: border-color 200ms ease;
+          color: #fff;
+          min-height: 120px;
+        }
+      }
+    }
+  }
+}

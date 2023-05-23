@@ -1,37 +1,32 @@
 import React from "react";
 import {
-  BrowserRouter,
-  Routes,
+  createBrowserRouter,
+  createRoutesFromElements,
   Route,
-  Navigate,
-  Router,
+  RouterProvider,
 } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Navbar from "./components/Navbar/Navbar";
-import Portfolio from "./components/Portfolio/Portfolio";
-import ContactMe from "./components/ContactMe/ContactMe";
-import CamaModels from "./components/CamaModels/CamaModels";
-import Banner from "./components/Banner/Banner";
 
+import Home from "./components/Home/Home";
+import Portfolio from "./components/Portfolio/Portfolio";
+import CamaModels from "./components/CamaModels/CamaModels";
 import AboutMe from "./components/AboutMe/AboutMe";
-import Gallery from "./components/Gallery/Gallery";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <AboutMe></AboutMe>
-      <Gallery></Gallery>
+  // Create a browser router
+  console.log("Routes created");
 
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/Portfolio" element={<Portfolio></Portfolio>}></Route>
-        <Route path="/ContactMe" element={<ContactMe></ContactMe>}></Route>
-        <Route path="/CamaModels" element={<CamaModels></CamaModels>}></Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  // Create routes using the Route component
+  const routes = createRoutesFromElements([
+    <Route path="/" element={<Home />} />,
+    <Route path="/Portfolio" element={<Portfolio />} />,
+    <Route path="/Aboutme" element={<AboutMe />} />,
+    <Route path="/CamaModels" element={<CamaModels />} />,
+  ]);
+
+  console.log("Routes created");
+  const BrowserRouterInstance = createBrowserRouter(routes);
+
+  return <RouterProvider router={BrowserRouterInstance}></RouterProvider>;
 }
 
 export default App;

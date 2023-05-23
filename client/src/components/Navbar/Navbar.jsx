@@ -32,7 +32,7 @@ function Navigation() {
   //Array for mobile screen animations
   const mobileNavlinks = [
     { id: 1, label: "Home", href: "/" },
-    { id: 2, label: "About", href: "/about" },
+    { id: 2, label: "AboutMe", href: "AboutMe" },
     { id: 3, label: "Camaphotos", href: "/camaphotos" },
     { id: 4, label: "ContactMe", href: "/contact" },
   ];
@@ -63,7 +63,7 @@ function Navigation() {
       <div className="header-title-nav-wrapper">
         <div className="header-logo">
           {" "}
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <img className="img-fluid" src={logo} />
           </a>{" "}
         </div>
