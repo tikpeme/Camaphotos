@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ContactMe.scss";
 import { Form } from "react-router-dom";
 
 function ContactMe() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Perform form submission logic here, such as sending the data to a server
+
+    // Reset the form fields
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
   return (
     <section className="contactMe-section">
       Contact
@@ -12,14 +25,18 @@ function ContactMe() {
             Need some beautiful portraits? Let's work together!
           </h3>
           <div className="form-wrapper">
-            <Form>
+            <form>
               <div className="text-field-wrapper">
                 <div className="text-wrap">
                   <label className="field-label">Name</label>
                   <input
                     type="text"
                     className="text-field"
+                    id="name"
+                    value={name}
                     placeholder="Enter your full name"
+                    onChange={(e) => setName(e.target.value)}
+                    required
                   ></input>
                 </div>
                 <div className="text-field-spacer"></div>
@@ -27,8 +44,12 @@ function ContactMe() {
                   <label className="field-label">Email</label>
                   <input
                     type="email"
+                    id="email"
+                    value={email}
                     className="text-field"
                     placeholder="Enter your Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   ></input>{" "}
                 </div>
               </div>
@@ -36,8 +57,9 @@ function ContactMe() {
               <textarea
                 placeholder="How Can I Help You?"
                 maxLength="5000"
-                id="Message"
-                name="Message"
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 data-name="Message"
                 className="text-field min-height w-input"
               ></textarea>
@@ -47,7 +69,7 @@ function ContactMe() {
                 data-wait="Sending Your Message"
                 className="white-outlined-btn w-button"
               ></input>
-            </Form>
+            </form>
           </div>
         </div>
       </div>
