@@ -152,11 +152,42 @@
             color: #fff;
             background-color: transparent;
             padding: 12px 24px;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
 
             &:hover {
               border-color: #f8f8f8;
+              background-color: white;
+              color: black;
             }
+          }
+        }
+        .success-message {
+          padding: 32px;
+          background-color: #fff;
+          font-family: "Times New Roman", TimesNewRoman, Times, Baskerville,
+            Georgia, serif;
+          font-size: 20px;
+          line-height: 26px;
+          font-weight: 400;
+          color: black;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contactMe-section {
+    .contactMe-wrapper {
+      .contact-grid {
+        .contact-title {
+        }
+        .form-wrapper {
+          .text-field-wrapper {
+            flex-direction: column;
+            border: red solid 1px;
+            width: 300px;
           }
         }
       }
@@ -188,6 +219,10 @@
 
         display: flex;
         width: 800px;
+
+        .contact-title {
+          text-align: center;
+        }
       }
     }
   }
