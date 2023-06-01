@@ -1,10 +1,11 @@
 .contactMe-section {
   min-height: 55vh;
   margin-top: 70px;
-  border: green solid 1px;
+  //border: green solid 1px;
   position: relative;
   padding-top: 120px;
   padding-bottom: 80px;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.2);
 
   .contactMe-wrapper {
     max-width: 1280px;
@@ -186,7 +187,6 @@
         .form-wrapper {
           .text-field-wrapper {
             flex-direction: column;
-            border: red solid 1px;
             width: 300px;
           }
         }
@@ -199,7 +199,7 @@
   .contactMe-section {
     min-height: 55vh;
     margin-top: 70px;
-    border: pink solid 1px;
+    //border: pink solid 1px;
     position: relative;
     padding-top: 120px;
     padding-bottom: 80px;
@@ -209,8 +209,6 @@
       justify-content: center;
 
       .contact-grid {
-        padding-right: 16px;
-        padding-left: 16px;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;

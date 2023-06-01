@@ -1,0 +1,16 @@
+.footer-section {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px 2%;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+  background-color: #101010;
+  justify-content: center;
+
+  .footer-container {
+    display: flex;
+    color: aliceblue;
+  }
+}
