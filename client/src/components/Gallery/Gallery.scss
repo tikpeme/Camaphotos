@@ -27,47 +27,54 @@
     justify-content: center;
     .image-grid {
       column-count: 3;
-      max-width: 800px;
+      //max-width: 800px;
       justify-content: center;
       padding: 30px;
+      gap: 10px;
 
-      .image-container {
-        position: relative;
-        max-width: 350px;
-        overflow: hidden;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        cursor: pointer;
-
-        .image-overlay-text {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: #fff;
-          font-size: 14px;
-          line-height: 20px;
-          letter-spacing: 1.8px;
-          text-transform: uppercase;
-          transition: all 0.7s ease; // Specify the transition properties
-          opacity: 0;
-
-          &.show {
-            opacity: 1;
-            height: auto;
-            //z-index: 1;
-          }
+      .image-grid-columns {
+        > * {
+          padding-top: 7px;
+          padding-bottom: 7px;
         }
+        .image-container {
+          position: relative;
+          max-width: 350px;
 
-        img {
-          max-width: 100%;
-          height: auto;
-          transform: scale(1);
-          transition: all 0.7s ease;
+          overflow: hidden;
 
-          &:hover {
-            transform: scale(1.2); // Apply the scale transformation on hover
-            opacity: 0.4;
+          cursor: pointer;
+
+          .image-overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            transition: all 0.7s ease; // Specify the transition properties
+            opacity: 0;
+
+            &.show {
+              opacity: 1;
+              height: auto;
+              //z-index: 1;
+            }
+          }
+
+          img {
+            max-width: 100%;
+            height: auto;
+            transform: scale(1);
+            transition: all 1s ease;
+
+            &:hover {
+              transform: scale(1.2); // Apply the scale transformation on hover
+              opacity: 0.4;
+            }
           }
         }
       }
@@ -88,7 +95,7 @@
       display: flex;
       justify-content: center;
       .image-grid {
-        column-count: 3;
+        column-count: 2;
         max-width: 800px;
         justify-content: center;
         padding: 30px;

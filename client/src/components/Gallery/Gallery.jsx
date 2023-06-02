@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import imagesArr from "../../images/images";
+import { imagesArr1, imagesArr2, imagesArr3 } from "../../images/images";
 import "./Gallery.scss";
 
 function Gallery() {
@@ -23,31 +23,75 @@ function Gallery() {
     }));
     return newArray;
   };
-  console.log(makeGallery(imagesArr));
+  console.log(makeGallery(imagesArr1));
   return (
     <section className="section-gallery">
       <div className="section-name">Gallery</div>
       <div className="image-grid-container">
         <div className="image-grid">
-          {makeGallery(imagesArr).map((image) => (
-            <div
-              className={image.className} //"image-container"
-              onMouseEnter={() => handleMouseEnter(image.id)}
-              onMouseLeave={handleMouseLeave}
-              key={image.id}
-            >
-              <p
-                className={`image-overlay-text ${
-                  HoveredElementiD === image.id ? "show" : ""
-                }`}
+          <div className="image-grid-columns">
+            {makeGallery(imagesArr1).map((image) => (
+              <div
+                className={image.className} //"image-container"
+                onMouseEnter={() => handleMouseEnter(image.id)}
+                onMouseLeave={handleMouseLeave}
+                key={image.id}
               >
-                {" "}
-                View IMAGE{" "}
-              </p>
+                <p
+                  className={`image-overlay-text ${
+                    HoveredElementiD === image.id ? "show" : ""
+                  }`}
+                >
+                  {" "}
+                  View IMAGE{" "}
+                </p>
 
-              <img src={image.imageUrl} />
-            </div>
-          ))}
+                <img src={image.imageUrl} />
+              </div>
+            ))}
+          </div>
+          <div className="image-grid-columns">
+            {makeGallery(imagesArr2).map((image) => (
+              <div
+                className={image.className} //"image-container"
+                onMouseEnter={() => handleMouseEnter(image.id)}
+                onMouseLeave={handleMouseLeave}
+                key={image.id}
+              >
+                <p
+                  className={`image-overlay-text ${
+                    HoveredElementiD === image.id ? "show" : ""
+                  }`}
+                >
+                  {" "}
+                  View IMAGE{" "}
+                </p>
+
+                <img src={image.imageUrl} />
+              </div>
+            ))}
+          </div>
+          <div className="image-grid-columns">
+            {makeGallery(imagesArr3).map((image) => (
+              <div
+                className={image.className} //"image-container"
+                onMouseEnter={() => handleMouseEnter(image.id)}
+                onMouseLeave={handleMouseLeave}
+                key={image.id}
+              >
+                <p
+                  className={`image-overlay-text ${
+                    HoveredElementiD === image.id ? "show" : ""
+                  }`}
+                >
+                  {" "}
+                  View IMAGE{" "}
+                </p>
+
+                <img src={image.imageUrl} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
