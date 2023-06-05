@@ -13,7 +13,7 @@ import AboutMe from "./components/AboutMe/AboutMe";
 
 function App() {
   // Create a browser router
-  console.log("Routes created");
+  //console.log("Routes created");
 
   // Create routes using the Route component
   const routes = createRoutesFromElements([
@@ -23,7 +23,7 @@ function App() {
     <Route path="/CamaModels" element={<CamaModels />} />,
   ]);
 
-  console.log("Routes created");
+  //console.log("Routes created");
   const BrowserRouterInstance = createBrowserRouter(routes);
 
   return <RouterProvider router={BrowserRouterInstance}></RouterProvider>;

@@ -41,7 +41,7 @@ function Navigation() {
     let desktopNavbar = document.querySelector(".header-display-desktop");
     if (window.pageYOffset > 600 && !fullScreenMenu) {
       ////scroll distance to engage background
-      console.log(window.pageYOffset);
+      //console.log(window.pageYOffset);
       //console.log(desktopNavbar.style.opacity);
       desktopNavbar.style.backgroundColor = "black";
       desktopNavbar.style.opacity = "1";

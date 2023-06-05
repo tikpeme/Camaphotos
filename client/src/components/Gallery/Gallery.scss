@@ -45,6 +45,41 @@
 
           cursor: pointer;
 
+          .Pop-out-image-container {
+            display: none;
+            position: absolute;
+            height: 100vh;
+            border: red solid 1px;
+
+            &.show {
+              display: block;
+
+              opacity: 1;
+              height: auto;
+              z-index: 3;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              max-width: 100%;
+              max-height: 100%;
+            }
+
+            .Pop-out-image {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              max-width: 100%;
+              max-height: 100%;
+            }
+            .fullscreen-exit-icon {
+              position: absolute;
+              top: 0;
+              right: 0;
+              color: #fff;
+            }
+          }
+
           .image-overlay-text {
             position: absolute;
             top: 50%;
@@ -74,6 +109,7 @@
             &:hover {
               transform: scale(1.2); // Apply the scale transformation on hover
               opacity: 0.4;
+              background: rgba(0, 0, 0, 0.4);
             }
           }
         }

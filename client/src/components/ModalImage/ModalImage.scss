@@ -1,0 +1,10 @@
+.modal-image-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: red 1px solid;
+  position: absolute;
+  .modal-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

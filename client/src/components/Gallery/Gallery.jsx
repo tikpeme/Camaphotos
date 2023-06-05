@@ -1,9 +1,24 @@
 import React, { useState } from "react";
 import { imagesArr1, imagesArr2, imagesArr3 } from "../../images/images";
 import "./Gallery.scss";
+import ModalImage from "../ModalImage/ModalImage";
 
 function Gallery() {
   const [HoveredElementiD, setHoveredElementiD] = useState(null);
+  const [fullscreenImageiD, setfullscreenImageiD] = useState(null);
+  const [fullscreenImageUrl, setfullscreenImageUrl] = useState(null);
+
+  const enterFullscreenImg = (Id, imgUrl) => {
+    console.log(Id);
+
+    setfullscreenImageiD(Id);
+    setfullscreenImageUrl(imgUrl);
+  };
+
+  const exitFullscreenImg = () => {
+    setfullscreenImageiD(null);
+    setfullscreenImageUrl(null);
+  };
 
   const handleMouseEnter = (Id) => {
     setHoveredElementiD(Id);
@@ -23,10 +38,16 @@ function Gallery() {
     }));
     return newArray;
   };
-  console.log(makeGallery(imagesArr1));
+  console?.log(fullscreenImageiD);
   return (
     <section className="section-gallery">
       <div className="section-name">Gallery</div>
+      {fullscreenImageUrl && (
+        <ModalImage
+          exitFullscreenImg={exitFullscreenImg}
+          imageUrl={fullscreenImageUrl}
+        ></ModalImage>
+      )}
       <div className="image-grid-container">
         <div className="image-grid">
           <div className="image-grid-columns">
@@ -46,7 +67,11 @@ function Gallery() {
                   View IMAGE{" "}
                 </p>
 
-                <img src={image.imageUrl} />
+                <img
+                  src={image.imageUrl}
+                  alt="model"
+                  onClick={() => enterFullscreenImg(image.id, image.imageUrl)}
+                />
               </div>
             ))}
           </div>
@@ -67,7 +92,7 @@ function Gallery() {
                   View IMAGE{" "}
                 </p>
 
-                <img src={image.imageUrl} />
+                <img src={image.imageUrl} alt="model" />
               </div>
             ))}
           </div>
@@ -88,7 +113,7 @@ function Gallery() {
                   View IMAGE{" "}
                 </p>
 
-                <img src={image.imageUrl} />
+                <img src={image.imageUrl} alt="model" />
               </div>
             ))}
           </div>
@@ -99,38 +124,3 @@ function Gallery() {
 }
 
 export default Gallery;
-
-/*
- <section className="section-gallery">
-      <h2 className="section-title center max-width"> Gallery </h2>
-      <div className="container-gallery">
-        <div className="imageGrid">
-          <div className="imageGridColumns">
-            <div className="gallery-image-wrap">
-              <a className="gallery-lightbox">
-                <div className="gallery-img-overlay">
-                  <div className="gallery-img-overlay-text"> View Image </div>
-                </div>
-                <img src={images.test1} />
-              </a>
-            </div>
-          </div>
-          <div className="imageGridColumns">
-            <div className="gallery-image-wrap"></div>
-            <a className="gallery-lightbox w-inline-block w-lightbox">
-              <div className="gallery-img-overlay">
-                <img />
-              </div>
-            </a>
-          </div>
-          <div className="imageGridColumns">
-            <div className="gallery-image-wrap"></div>
-            <a className="gallery-lightbox w-inline-block w-lightbox">
-              <div className="gallery-img-overlay">
-                <img />
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>*/
