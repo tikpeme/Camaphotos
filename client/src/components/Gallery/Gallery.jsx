@@ -13,11 +13,13 @@ function Gallery() {
 
     setfullscreenImageiD(Id);
     setfullscreenImageUrl(imgUrl);
+    document.body.style.overflow = fullscreenImageUrl ? "auto" : "hidden";
   };
 
   const exitFullscreenImg = () => {
     setfullscreenImageiD(null);
     setfullscreenImageUrl(null);
+    document.body.style.overflow = fullscreenImageUrl ? "auto" : "hidden";
   };
 
   const handleMouseEnter = (Id) => {
@@ -66,10 +68,10 @@ function Gallery() {
                   {" "}
                   View IMAGE{" "}
                 </p>
-
                 <img
                   src={image.imageUrl}
-                  alt="model"
+                  alt="model wearing bikini"
+                  loading="eager"
                   onClick={() => enterFullscreenImg(image.id, image.imageUrl)}
                 />
               </div>
@@ -91,8 +93,12 @@ function Gallery() {
                   {" "}
                   View IMAGE{" "}
                 </p>
-
-                <img src={image.imageUrl} alt="model" />
+                <img
+                  src={image.imageUrl}
+                  alt="model wearing bikini"
+                  onClick={() => enterFullscreenImg(image.id, image.imageUrl)}
+                  loading="eager"
+                />{" "}
               </div>
             ))}
           </div>
@@ -112,8 +118,12 @@ function Gallery() {
                   {" "}
                   View IMAGE{" "}
                 </p>
-
-                <img src={image.imageUrl} alt="model" />
+                <img
+                  src={image.imageUrl}
+                  alt="model wearing bikini"
+                  onClick={() => enterFullscreenImg(image.id, image.imageUrl)}
+                  loading="eager"
+                />
               </div>
             ))}
           </div>

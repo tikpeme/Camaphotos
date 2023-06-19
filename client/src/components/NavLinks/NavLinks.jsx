@@ -8,13 +8,11 @@ function NavLinks() {
       <a href="/" className="desktop-header-nav-item">
         Home
       </a>
-      <a href="#" className="desktop-header-nav-item">
+      <a href="/Portfolio" className="desktop-header-nav-item">
         Portfolio
       </a>
-      <a href="/AboutMe" className="desktop-header-nav-item">
-        AboutMe
-      </a>
-      <a href="#" className="desktop-header-nav-item">
+
+      <a href="#contact-me" className="desktop-header-nav-item">
         ContactMe
       </a>
     </nav>

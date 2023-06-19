@@ -26,20 +26,25 @@ function Introduction() {
   }, [controls, inView, scrollPosition]);
 
   const imgVariants = {
-    hidden: { opacity: 0, x: -100 },
+    hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },
+    transition: {
+      duration: 1,
+      ease: "easeOut", // Apply a specific easing function for smoother animation
+    },
   };
 
   const textVariants = {
     hidden: {
       opacity: 0,
-      x: 500,
+      x: 50,
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 2,
+        duration: 1,
+        ease: "easeOut", // Apply a specific easing function for smoother animation
       },
     },
   };

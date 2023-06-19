@@ -30,13 +30,17 @@ const openMenu = () => {
   elem.style.setProperty("--translate-x", `-${offsetX}px`);
   elem.style.setProperty("--translate-y", `${offsetY}px`);
   elem.style.setProperty("--scale", scale);
+  document.querySelector("#nav-bg").style.backgroundColor = "black";
 };
-const closeMenu = () => {
+export const closeMenu = () => {
   const elem = document.querySelector("#nav-bg");
 
   elem.style.setProperty("--scale", 1);
   elem.style.setProperty("--translate-x", 0);
   elem.style.setProperty("--translate-y", 0);
+  setTimeout(() => {
+    document.querySelector("#nav-bg").style.backgroundColor = "transparent";
+  }, 250); // Delay in milliseconds (0.3 seconds)
 };
 const animateMenu = () => {
   open ? openMenu() : closeMenu();

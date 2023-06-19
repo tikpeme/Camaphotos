@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navbar.scss";
 import logo from "../../images/logo-black.JPG";
 import NavLinks from "../NavLinks/NavLinks";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { RxCross1 } from "react-icons/rx";
+
 import {
   toggleMenu,
   resizeHandler,
   calculateValues,
-  toggleBtn,
+  closeMenu,
 } from "./fullscreenToggle.js";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -32,16 +31,27 @@ function Navigation() {
   //Array for mobile screen animations
   const mobileNavlinks = [
     { id: 1, label: "Home", href: "/" },
-    { id: 2, label: "AboutMe", href: "AboutMe" },
-    { id: 3, label: "Camaphotos", href: "/camaphotos" },
-    { id: 4, label: "ContactMe", href: "/contact" },
+    { id: 2, label: "Portfolio", href: "/Portfolio" },
+    { id: 3, label: "ContactMe", href: "#contact-me" },
   ];
 
+  const handleNavlinkClick = () => {
+    document
+      .querySelector('a[href="#contact-me"]')
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const contactSection = document.querySelector("#contact-me");
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      });
+
+    toggleCalculateValues();
+  };
   window.addEventListener("scroll", function () {
     let desktopNavbar = document.querySelector(".header-display-desktop");
     if (window.pageYOffset > 600 && !fullScreenMenu) {
       ////scroll distance to engage background
-      //console.log(window.pageYOffset);
+      console.log(window.pageYOffset);
       //console.log(desktopNavbar.style.opacity);
       desktopNavbar.style.backgroundColor = "black";
       desktopNavbar.style.opacity = "1";
@@ -49,11 +59,11 @@ function Navigation() {
       if (fullScreenMenu) {
         desktopNavbar.style.opacity = "1";
       } else {
-        desktopNavbar.style.backgroundColor = "transparent";
-        desktopNavbar.style.opacity = "0.7";
+        //desktopNavbar.style.backgroundColor = "transparent";
+        //desktopNavbar.style.opacity = "0.7";
       }
     } else if (!fullScreenMenu) {
-      // desktopNavbar.style.backgroundColor = "transparent";
+      desktopNavbar.style.backgroundColor = "transparent";
       desktopNavbar.style.opacity = "1";
     }
   });
@@ -64,7 +74,7 @@ function Navigation() {
         <div className="header-logo">
           {" "}
           <a className="navbar-brand" href="/">
-            <img className="img-fluid" src={logo} />
+            <img className="img-fluid" src={logo} alt="logo" />
           </a>{" "}
         </div>
         <div className="header-nav">
@@ -101,6 +111,7 @@ function Navigation() {
                       <a
                         href={link.href}
                         className="MobileFullScreen-header-nav-item"
+                        onClick={handleNavlinkClick}
                       >
                         {link.label}
                       </a>
@@ -114,7 +125,11 @@ function Navigation() {
       </div>
       <div className="header-icons-wrapper">
         <div className="header-icons">
-          <a href="#">
+          <a
+            href="https://www.instagram.com/camaphotos/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +145,11 @@ function Navigation() {
           </a>{" "}
         </div>
         <div className="header-icons">
-          <a>
+          <a
+            href="https://twitter.com/camaphotos?lang=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"

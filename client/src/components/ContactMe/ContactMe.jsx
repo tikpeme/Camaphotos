@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import "./ContactMe.scss";
-import { Form } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
 function ContactMe() {
@@ -38,7 +37,7 @@ function ContactMe() {
     setformSubmitted(true);
   };
   return (
-    <section className="contactMe-section">
+    <section className="contactMe-section" id="contact-me">
       <div className="contactMe-wrapper">
         <div className="contact-grid">
           <h3 className="contact-title">

@@ -1,10 +1,41 @@
-.modal-image-container {
-  background-color: rgba(0, 0, 0, 0.6);
-  border: red 1px solid;
-  position: absolute;
-  .modal-image {
-    width: 100%;
+.modal-image-backdrop {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  overflow: hidden;
+  z-index: 21;
+  //border: red 1px solid;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-image-container {
+    background-color: rgba(0, 0, 0, 0.9);
+
+    position: absolute;
+    //width: 42vw;
+    //max-height: 40vh;
+    width: 700px;
+
     height: auto;
-    object-fit: cover;
+    .modal-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      position: relative;
+      //padding: 15rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .modal-image-backdrop {
+    .modal-image-container {
+      width: 99vw;
+    }
   }
 }
