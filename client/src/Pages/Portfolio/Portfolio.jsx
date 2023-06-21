@@ -1,9 +1,9 @@
 import React from "react";
 
-import Navbar from "../Navbar/Navbar";
-import ContactMe from "../ContactMe/ContactMe";
+import Navbar from "../../components/Navbar/Navbar";
+import ContactMe from "../../components/ContactMe/ContactMe";
 
-import Footer from "../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 function Portfolio() {
   return (

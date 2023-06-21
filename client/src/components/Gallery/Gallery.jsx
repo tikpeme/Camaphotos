@@ -59,6 +59,7 @@ function Gallery() {
                 onMouseEnter={() => handleMouseEnter(image.id)}
                 onMouseLeave={handleMouseLeave}
                 key={image.id}
+                loading="eager"
               >
                 <p
                   className={`image-overlay-text ${

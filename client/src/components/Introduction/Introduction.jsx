@@ -60,7 +60,7 @@ function Introduction() {
           variants={imgVariants}
           transition={{ duration: 2 }}
         >
-          <img src={portrait} />
+          <img src={portrait} alt="portrait of Photographer" />
         </motion.div>
 
         <motion.div

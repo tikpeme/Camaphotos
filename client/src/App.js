@@ -6,8 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Home from "./components/Home/Home";
-import Portfolio from "./components/Portfolio/Portfolio";
+import Home from "./Pages/Home/Home";
+import Portfolio from "./Pages/Portfolio/Portfolio";
 import CamaModels from "./components/CamaModels/CamaModels";
 import AboutMe from "./components/AboutMe/AboutMe";
 
