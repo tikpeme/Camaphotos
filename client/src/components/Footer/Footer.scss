@@ -13,4 +13,17 @@
     display: flex;
     color: aliceblue;
   }
+  .footer-icons-wrapper {
+    display: none;
+  }
+
+  @media screen and (max-width: 706px) {
+    .footer-icons-wrapper {
+      display: flex;
+    }
+    .footer-icons {
+      margin-left: 1rem;
+      color: white;
+    }
+  }
 }

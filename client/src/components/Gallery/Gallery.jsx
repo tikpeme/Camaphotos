@@ -5,19 +5,16 @@ import ModalImage from "../ModalImage/ModalImage";
 
 function Gallery() {
   const [HoveredElementiD, setHoveredElementiD] = useState(null);
-  const [fullscreenImageiD, setfullscreenImageiD] = useState(null);
   const [fullscreenImageUrl, setfullscreenImageUrl] = useState(null);
 
   const enterFullscreenImg = (Id, imgUrl) => {
     console.log(Id);
 
-    setfullscreenImageiD(Id);
     setfullscreenImageUrl(imgUrl);
     document.body.style.overflow = fullscreenImageUrl ? "auto" : "hidden";
   };
 
   const exitFullscreenImg = () => {
-    setfullscreenImageiD(null);
     setfullscreenImageUrl(null);
     document.body.style.overflow = fullscreenImageUrl ? "auto" : "hidden";
   };
@@ -40,7 +37,6 @@ function Gallery() {
     }));
     return newArray;
   };
-  console?.log(fullscreenImageiD);
   return (
     <section className="section-gallery">
       <div className="section-name">Gallery</div>
