@@ -1,7 +1,7 @@
 import MiamiImg from "../../images/Miami_Image.jpeg";
 import "./Banner.scss";
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 //import "bootstrap/dist/css/bootstrap.min.css";
 

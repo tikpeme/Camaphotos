@@ -7,7 +7,6 @@ import {
   toggleMenu,
   resizeHandler,
   calculateValues,
-  closeMenu,
 } from "./fullscreenToggle.js";
 
 import { motion, AnimatePresence } from "framer-motion";
